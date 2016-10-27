@@ -1,0 +1,32 @@
+{
+  "type" : "Coverage",
+  "domain" : { ... },
+  "parameters" : { ... },
+  "ranges" : {
+    "temperature" : "http://example.com/temperature.covjson"
+  },
+  "rangeAlternates": {
+    "ex:dap2": {
+      "temperature": {
+        "type": "ex:DAP2NdArray",
+        "dataType": "float",
+        "axisNames": ["y","x"],
+        "shape": [180, 360],
+        "ex:offset": 40,
+        "ex:factor": 100,
+        "ex:missingValue": 999,
+        "urlTemplate": "http://my.opendap.server/data.dods?air_temp{y}{x}"
+      }
+    },
+    "ex:tiff": {
+      "temperature": {
+        "type": "ex:TIFF2DArray",
+        "dataType": "float",
+        "axisNames": ["y","x"],
+        "shape": [180, 360],
+        "ex:channel": 0,
+        "ex:url": "http://example.com/data.tiff"
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+{
+    "required": [
+        "axes", 
+        "referencing", 
+        "type"
+    ], 
+    "type": "object", 
+    "properties": {
+        "referencing": {
+            "items": {
+                "required": [
+                    "coordinates", 
+                    "system"
+                ], 
+                "type": "object", 
+                "properties": {
+                    "system": {
+                        "required": [
+                            "id", 
+                            "type"
+                        ], 
+                        "type": "object", 
+                        "properties": {
+                            "type": {
+                                "type": "string"
+                            }, 
+                            "id": {
+                                "type": "string"
+                            }
+                        }
+                    }, 
+                    "coordinates": {
+                        "items": {
+                            "type": "string"
+                        }, 
+                        "type": "array"
+                    }
+                }
+            }, 
+            "type": "array"
+        }, 
+        "axes": {
+            "required": [
+                "composite"
+            ], 
+            "type": "object", 
+            "properties": {
+                "composite": {
+                    "required": [
+                        "coordinates", 
+                        "dataType", 
+                        "values"
+                    ], 
+                    "type": "object", 
+                    "properties": {
+                        "dataType": {
+                            "type": "string"
+                        }, 
+                        "values": {
+                            "items": {
+                                "items": {
+                                    "items": {
+                                        "items": {
+                                            "items": {
+                                                "type": "number"
+                                            }, 
+                                            "type": "array"
+                                        }, 
+                                        "type": "array"
+                                    }, 
+                                    "type": "array"
+                                }, 
+                                "type": "array"
+                            }, 
+                            "type": "array"
+                        }, 
+                        "coordinates": {
+                            "items": {
+                                "type": "string"
+                            }, 
+                            "type": "array"
+                        }
+                    }
+                }
+            }
+        }, 
+        "type": {
+            "type": "string"
+        }
+    }
+}

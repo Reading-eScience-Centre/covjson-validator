@@ -1,0 +1,113 @@
+{
+    "required": [
+        "categoryEncoding", 
+        "observedProperty", 
+        "type"
+    ], 
+    "type": "object", 
+    "properties": {
+        "observedProperty": {
+            "required": [
+                "categories", 
+                "id", 
+                "label"
+            ], 
+            "type": "object", 
+            "properties": {
+                "id": {
+                    "type": "string"
+                }, 
+                "categories": {
+                    "items": {
+                        "required": [
+                            "id", 
+                            "label"
+                        ], 
+                        "type": "object", 
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            }, 
+                            "description": {
+                                "required": [
+                                    "en"
+                                ], 
+                                "type": "object", 
+                                "properties": {
+                                    "en": {
+                                        "type": "string"
+                                    }
+                                }
+                            }, 
+                            "label": {
+                                "required": [
+                                    "en"
+                                ], 
+                                "type": "object", 
+                                "properties": {
+                                    "en": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }, 
+                    "type": "array"
+                }, 
+                "label": {
+                    "required": [
+                        "en"
+                    ], 
+                    "type": "object", 
+                    "properties": {
+                        "en": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }, 
+        "type": {
+            "type": "string"
+        }, 
+        "categoryEncoding": {
+            "required": [
+                "http://mmisw.org/ont/argo/qualityFlag/_0", 
+                "http://mmisw.org/ont/argo/qualityFlag/_1", 
+                "http://mmisw.org/ont/argo/qualityFlag/_2", 
+                "http://mmisw.org/ont/argo/qualityFlag/_3", 
+                "http://mmisw.org/ont/argo/qualityFlag/_4", 
+                "http://mmisw.org/ont/argo/qualityFlag/_5", 
+                "http://mmisw.org/ont/argo/qualityFlag/_8", 
+                "http://mmisw.org/ont/argo/qualityFlag/_9"
+            ], 
+            "type": "object", 
+            "properties": {
+                "http://mmisw.org/ont/argo/qualityFlag/_3": {
+                    "type": "integer"
+                }, 
+                "http://mmisw.org/ont/argo/qualityFlag/_2": {
+                    "type": "integer"
+                }, 
+                "http://mmisw.org/ont/argo/qualityFlag/_1": {
+                    "type": "integer"
+                }, 
+                "http://mmisw.org/ont/argo/qualityFlag/_0": {
+                    "type": "integer"
+                }, 
+                "http://mmisw.org/ont/argo/qualityFlag/_5": {
+                    "type": "integer"
+                }, 
+                "http://mmisw.org/ont/argo/qualityFlag/_4": {
+                    "type": "integer"
+                }, 
+                "http://mmisw.org/ont/argo/qualityFlag/_9": {
+                    "type": "integer"
+                }, 
+                "http://mmisw.org/ont/argo/qualityFlag/_8": {
+                    "type": "integer"
+                }
+            }
+        }
+    }
+}

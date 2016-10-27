@@ -1,0 +1,81 @@
+{
+    "required": [
+        "axes", 
+        "referencing", 
+        "type"
+    ], 
+    "type": "object", 
+    "properties": {
+        "referencing": {
+            "items": {
+                "required": [
+                    "coordinates", 
+                    "system"
+                ], 
+                "type": "object", 
+                "properties": {
+                    "system": {
+                        "required": [
+                            "ex:h", 
+                            "ex:k", 
+                            "ex:ordering", 
+                            "type"
+                        ], 
+                        "type": "object", 
+                        "properties": {
+                            "ex:ordering": {
+                                "type": "string"
+                            }, 
+                            "ex:h": {
+                                "type": "integer"
+                            }, 
+                            "ex:k": {
+                                "type": "integer"
+                            }, 
+                            "type": {
+                                "type": "string"
+                            }
+                        }
+                    }, 
+                    "coordinates": {
+                        "items": {
+                            "type": "string"
+                        }, 
+                        "type": "array"
+                    }
+                }
+            }, 
+            "type": "array"
+        }, 
+        "axes": {
+            "required": [
+                "hp"
+            ], 
+            "type": "object", 
+            "properties": {
+                "hp": {
+                    "required": [
+                        "num", 
+                        "start", 
+                        "stop"
+                    ], 
+                    "type": "object", 
+                    "properties": {
+                        "start": {
+                            "type": "integer"
+                        }, 
+                        "num": {
+                            "type": "integer"
+                        }, 
+                        "stop": {
+                            "type": "integer"
+                        }
+                    }
+                }
+            }
+        }, 
+        "type": {
+            "type": "string"
+        }
+    }
+}

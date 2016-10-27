@@ -1,0 +1,21 @@
+{
+  "type" : "Parameter",
+  "unit" : {
+    "label": {
+      "en": "Ratio"
+    },
+    "symbol": {
+      "value": "1",
+      "type": "http://www.opengis.net/def/uom/UCUM/"
+    }
+  },
+  "observedProperty" : {
+    "id" : "http://vocab.nerc.ac.uk/standard_name/sea_ice_area_fraction/",
+    "label" : {
+      "en": "Sea ice area fraction"
+    },
+    "description": {
+      "en": "Sea ice area fraction is the area of the sea surface occupied by sea ice. It is also called 'sea ice concentration'."
+    }
+  }
+}

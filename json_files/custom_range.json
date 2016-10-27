@@ -1,0 +1,72 @@
+{
+  "type" : "Coverage",
+  "domain" : {
+    "type" : "Domain",
+    "domainType" : "Grid",
+    "axes": {
+      "x" : { "start": 7, "stop": 14, "num": 4 },
+      "y" : { "start": 54, "stop": 48, "num": 4 }
+    },
+    "referencing": [{
+      "coordinates": ["x","y"],
+      "system": {
+        "type": "GeographicCRS",
+        "id": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+      }
+    }]
+  },
+  "parameters" : {
+    "temperature": {
+      "type" : "Parameter",
+      "description": {
+        "en": "Air temperature measured in degrees Celsius."
+      },
+      "unit" : {
+        "label": {
+          "en": "Degree Celsius"
+        },
+        "symbol": {
+          "value": "Cel",
+          "type": "http://www.opengis.net/def/uom/UCUM/"
+        }
+      },
+      "observedProperty" : {
+        "id": "http://vocab.nerc.ac.uk/standard_name/air_temperature/",
+        "label" : {
+          "en": "Air temperature",
+          "de": "Lufttemperatur"
+        },
+        "description": {
+          "en": "Air temperature is the bulk temperature of the air, not the surface (skin) temperature."
+        }
+      }
+    }
+  },
+  "ranges" : {
+    "temperature" : "http://example.com/temperature.covjson"
+  },
+  "rangeAlternates": {
+    "ex:dap2": {
+      "temperature": {
+        "type": "ex:DAP2NdArray",
+        "dataType": "float",
+        "axisNames": ["y","x"],
+        "shape": [180, 360],
+        "ex:offset": 40,
+        "ex:factor": 100,
+        "ex:missingValue": 999,
+        "urlTemplate": "http://my.opendap.server/data.dods?air_temp{y}{x}"
+      }
+    },
+    "ex:tiff": {
+      "temperature": {
+        "type": "ex:TIFF2DArray",
+        "dataType": "float",
+        "axisNames": ["y","x"],
+        "shape": [180, 360],
+        "ex:channel": 0,
+        "ex:url": "http://example.com/data.tiff"
+      }
+    }
+  }
+}

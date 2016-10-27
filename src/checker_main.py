@@ -1,6 +1,7 @@
 __author__ = 'Bug'
 
 import argparse
+import JSONCheck
 
 def create_parser(args=None):
     """
@@ -21,8 +22,11 @@ def create_parser(args=None):
     return parser.parse_args(args=args)
 
 def main():
-    # create main class here and call starter method
-    pass
+    try:
+        checker = JSONCheck.JSONCheck()
+        checker.check_json(filename)
+    except Exception as e:
+        print (e.message)
 
 if __name__ == '__main__':
     parse_args = create_parser()

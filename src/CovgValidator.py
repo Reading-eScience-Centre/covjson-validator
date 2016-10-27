@@ -8,7 +8,9 @@
 # 
 #######################################################
 import jsonschema
-from JSONCheck import enum
+import os
+from JSONCheck import enum, loadfile
+
 
 class CovgValidator():
     """Has enum of expected nodes, and link to sub-schema
@@ -16,8 +18,9 @@ class CovgValidator():
     def __init__(self):
         self.m_covg_nodes = enum(domain="domain", params="parameters",
                                  ranges="ranges", range_alt="rangeAlternates")
-        #TODO make this OS independent
-        self.m_schema_dir = '..\..\schema'
+        self.m_schema_dir = '..' + os.pathsep + 'schemas'
 
     def validate_json(self, covg_dict):
+        # Divide up object into parts according to nodes
+        # pass relevant part to sub-validator
         schema_file = 'sss'

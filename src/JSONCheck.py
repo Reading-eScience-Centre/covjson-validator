@@ -8,40 +8,49 @@
 # 
 #######################################################
 import json
-import jsonschema
-
-from Validator import Validator
 from CovgValidator import CovgValidator
 from CovgCollValidator import CovgCollValidator
-from DomainValidator import DomainValidator
-from ParamValidator import ParamValidator
+
 
 def enum(**enums):
     return type('Enum', (), enums)
 
+
+def loadfile(filename):
+    """
+    :param filename: full path/name of json file to load
+    :return: dictionary containing json object
+    """
+    with open(filename) as file:
+        return json.load(file)
+
+
 class JSONCheck:
-    """Load the JSON file to be checked, subdivide according to sections, pass each
-    section to relevant validator.
+    """
+    Load the JSON file to be checked, delegate to appropriate validation class depending on main type.
     """
     def __init__(self):
+        """
+
+        :return:
+        """
         self.m_type_node = "type"
         self.m_covg_type = "Coverage"
         self.m_coll_type = "CoverageCollection"
-
-        # self.m_val_index = enum(covg=0, covg_coll=1, domain=2, param=3)
-
-        # self.m_validators = [0] * 4  # 4 validator instances
-        # self.m_validators[self.m_val_index.domain] = DomainValidator()
-        # self.m_validators[self.m_val_index.param] = ParamValidator()
-        # self.m_validators[self.m_val_index.covg] = CovgValidator(self.m_covg_nodes)
-        # self.m_validators[self.m_val_index.covg_coll] = CovgCollValidator(self.m_covg_coll_nodes)
-
         self.m_covg_validator = CovgValidator()
         self.m_covg_coll_validator = CovgCollValidator()
 
     def check_json(self, filename):
+        """
+        Checks for main object type of Coverage or CoverageCollection only at present.
+        note: other types allowed: Domain, NdArray, TiledNdArray - these all appear within a coverage usually
+
+        :param filename: full path/name of json file to validate
+        :return: none
+        :raise: Exceptions TBD
+        """
         # read the JSON file to be checked
-        json_data = self._loadfile(filename)
+        json_data = self.loadfile(filename)
         # check the resulting dict based on top-level nodes - one or other of of main types above
         if json_data.get(self.m_type_node) == self.m_covg_type:
             # it's a normal coverage so pass to appropriate validator
@@ -53,9 +62,4 @@ class JSONCheck:
             # it's neither so raise error
             raise jsonschema.SchemaError("File is not a coverage or coverage collection.")
 
-    def _divide_nodes(self):
-        pass
 
-    def _loadfile(self, filename):
-        with open(filename) as file:
-            return json.load(file)

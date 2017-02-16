@@ -37,10 +37,10 @@ class JSONCheck:
         :return:
         """
         self.m_top_node_key = "type"
-        self.top_node_dict = {"Coverage": CovgValidator(),
-                              "CoverageCollection": CovgCollValidator(),
-                              "Domain": DomainValidator(),
-                              "Parameter": ParamValidator()}
+        self.top_node_value_dict = {"Coverage": CovgValidator(),
+                                    "CoverageCollection": CovgCollValidator(),
+                                    "Domain": DomainValidator(),
+                                    "Parameter": ParamValidator()}
         self.m_validator = None
 
     def check_json(self, filename):
@@ -56,7 +56,7 @@ class JSONCheck:
         json_data = self.loadfile(filename)
         # check the resulting dict based on top-level nodes - one of the main types above
         try:
-            the_validator = self.top_node_dict[json_data.get(self.m_top_node_key)]
+            the_validator = self.top_node_value_dict[json_data.get(self.m_top_node_key)]
             the_validator.validate_json(json_data)
         except:
             # it's neither so raise error

@@ -9,7 +9,8 @@
 #######################################################
 import jsonschema
 import os
-from JSONCheck import enum, loadfile
+from DomainValidator import DomainValidator
+from ParamValidator import ParamValidator
 
 class CovgNodes:
     """Parent CoverageJSON object nodes.
@@ -22,14 +23,23 @@ class CovgValidator():
     """Has enum of expected nodes, and link to sub-schema
     """
     def __init__(self):
-        self.m_covg_nodes = enum(domain="domain", params="parameters",
-                                 ranges="ranges", range_alt="rangeAlternates")
-        self.m_schema_dir = '..' + os.pathsep + 'schemas'
+        self.node_dict = {"domain": DomainValidator(),
+                          "parameters": ParamValidator(),
+                          "ranges": ['GenSON_range_values_part.json', 'GenSON_custom_range.json'],
+                          "rangeAlternates": []}
+        self.m_schema_dir = '..' + os.pathsep + 'schemas' + os.pathsep
 
     def validate_json(self, json_data):
         # Divide up object into parts according to nodes
-        # pass relevant part to sub-validator
+        # pass relevant part to sub-validator or try to validate here
         # use each enum as key
-        for item in [a for a in dir(self.m_covg_nodes) if not a.startswith('__')]:
+        for item in [a for a in self.node_dict.keys()]:
             data_section = json_data.get(item)
-        schema_file = 'sss'
+            if item is not isinstance(list):
+                validator = self.node_dict[item]
+                validator.validate_json_part(data_section)
+            else:
+                is_valid_json = False
+                while not is_valid_json:
+                    for the_schema in self.node_dict[item]:
+                        is_valid_json = jsonschema.validate(data_section, self.m_schema_dir + the_schema)

@@ -1,0 +1,47 @@
+{
+    "required": [
+        "observedProperty", 
+        "type", 
+        "unit"
+    ], 
+    "type": "object", 
+    "properties": {
+        "observedProperty": {
+            "required": [
+                "label"
+            ], 
+            "type": "object", 
+            "properties": {
+                "label": {
+                    "required": [
+                        "de", 
+                        "en"
+                    ], 
+                    "type": "object", 
+                    "properties": {
+                        "de": {
+                            "type": "string"
+                        }, 
+                        "en": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }, 
+        "type": {
+            "type": "string"
+        }, 
+        "unit": {
+            "required": [
+                "symbol"
+            ], 
+            "type": "object", 
+            "properties": {
+                "symbol": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,36 @@
+{
+    "required": [
+        "axisNames", 
+        "dataType", 
+        "shape", 
+        "type", 
+        "values"
+    ], 
+    "type": "object", 
+    "properties": {
+        "dataType": {
+            "type": "string"
+        }, 
+        "axisNames": {
+            "items": {
+                "type": "string"
+            }, 
+            "type": "array"
+        }, 
+        "shape": {
+            "items": {
+                "type": "integer"
+            }, 
+            "type": "array"
+        }, 
+        "type": {
+            "type": "string"
+        }, 
+        "values": {
+            "items": {
+                "type": "number"
+            }, 
+            "type": "array"
+        }
+    }
+}

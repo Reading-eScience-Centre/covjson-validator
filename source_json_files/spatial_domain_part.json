@@ -1,0 +1,15 @@
+{
+  "type" : "Domain",
+  "domainType" : "Grid",
+  "axes": {
+    "x" : { "start": 7, "stop": 14, "num": 4 },
+    "y" : { "start": 54, "stop": 48, "num": 4 }
+  },
+  "referencing": [{
+    "coordinates": ["x","y"],
+    "system": {
+      "type": "GeographicCRS",
+      "id": "http://www.opengis.net/def/crs/OGC/1.3/CRS84"
+    }
+  }]
+}

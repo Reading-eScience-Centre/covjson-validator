@@ -1,0 +1,262 @@
+{
+    "required": [
+        "domain", 
+        "parameters", 
+        "ranges", 
+        "type"
+    ], 
+    "type": "object", 
+    "properties": {
+        "ranges": {
+            "required": [
+                "temperature"
+            ], 
+            "type": "object", 
+            "properties": {
+                "temperature": {
+                    "required": [
+                        "axisNames", 
+                        "dataType", 
+                        "shape", 
+                        "type", 
+                        "values"
+                    ], 
+                    "type": "object", 
+                    "properties": {
+                        "dataType": {
+                            "type": "string"
+                        }, 
+                        "axisNames": {
+                            "items": {
+                                "type": "string"
+                            }, 
+                            "type": "array"
+                        }, 
+                        "shape": {
+                            "items": {
+                                "type": "integer"
+                            }, 
+                            "type": "array"
+                        }, 
+                        "type": {
+                            "type": "string"
+                        }, 
+                        "values": {
+                            "items": {
+                                "type": "number"
+                            }, 
+                            "type": "array"
+                        }
+                    }
+                }
+            }
+        }, 
+        "domain": {
+            "required": [
+                "axes", 
+                "domainType", 
+                "referencing", 
+                "type"
+            ], 
+            "type": "object", 
+            "properties": {
+                "referencing": {
+                    "items": {
+                        "required": [
+                            "coordinates", 
+                            "system"
+                        ], 
+                        "type": "object", 
+                        "properties": {
+                            "system": {
+                                "required": [
+                                    "id", 
+                                    "type"
+                                ], 
+                                "type": "object", 
+                                "properties": {
+                                    "type": {
+                                        "type": "string"
+                                    }, 
+                                    "id": {
+                                        "type": "string"
+                                    }
+                                }
+                            }, 
+                            "coordinates": {
+                                "items": {
+                                    "type": "string"
+                                }, 
+                                "type": "array"
+                            }
+                        }
+                    }, 
+                    "type": "array"
+                }, 
+                "axes": {
+                    "required": [
+                        "x", 
+                        "y"
+                    ], 
+                    "type": "object", 
+                    "properties": {
+                        "y": {
+                            "required": [
+                                "num", 
+                                "start", 
+                                "stop"
+                            ], 
+                            "type": "object", 
+                            "properties": {
+                                "start": {
+                                    "type": "integer"
+                                }, 
+                                "num": {
+                                    "type": "integer"
+                                }, 
+                                "stop": {
+                                    "type": "integer"
+                                }
+                            }
+                        }, 
+                        "x": {
+                            "required": [
+                                "num", 
+                                "start", 
+                                "stop"
+                            ], 
+                            "type": "object", 
+                            "properties": {
+                                "start": {
+                                    "type": "integer"
+                                }, 
+                                "num": {
+                                    "type": "integer"
+                                }, 
+                                "stop": {
+                                    "type": "integer"
+                                }
+                            }
+                        }
+                    }
+                }, 
+                "type": {
+                    "type": "string"
+                }, 
+                "domainType": {
+                    "type": "string"
+                }
+            }
+        }, 
+        "type": {
+            "type": "string"
+        }, 
+        "parameters": {
+            "required": [
+                "temperature"
+            ], 
+            "type": "object", 
+            "properties": {
+                "temperature": {
+                    "required": [
+                        "description", 
+                        "observedProperty", 
+                        "type", 
+                        "unit"
+                    ], 
+                    "type": "object", 
+                    "properties": {
+                        "observedProperty": {
+                            "required": [
+                                "description", 
+                                "id", 
+                                "label"
+                            ], 
+                            "type": "object", 
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                }, 
+                                "description": {
+                                    "required": [
+                                        "en"
+                                    ], 
+                                    "type": "object", 
+                                    "properties": {
+                                        "en": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }, 
+                                "label": {
+                                    "required": [
+                                        "de", 
+                                        "en"
+                                    ], 
+                                    "type": "object", 
+                                    "properties": {
+                                        "de": {
+                                            "type": "string"
+                                        }, 
+                                        "en": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }, 
+                        "type": {
+                            "type": "string"
+                        }, 
+                        "description": {
+                            "required": [
+                                "en"
+                            ], 
+                            "type": "object", 
+                            "properties": {
+                                "en": {
+                                    "type": "string"
+                                }
+                            }
+                        }, 
+                        "unit": {
+                            "required": [
+                                "label", 
+                                "symbol"
+                            ], 
+                            "type": "object", 
+                            "properties": {
+                                "symbol": {
+                                    "required": [
+                                        "type", 
+                                        "value"
+                                    ], 
+                                    "type": "object", 
+                                    "properties": {
+                                        "type": {
+                                            "type": "string"
+                                        }, 
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }, 
+                                "label": {
+                                    "required": [
+                                        "en"
+                                    ], 
+                                    "type": "object", 
+                                    "properties": {
+                                        "en": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

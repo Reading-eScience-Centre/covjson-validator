@@ -12,5 +12,12 @@ class CovgCollValidator():
     def __init__(self, covg_coll_nodes):
         self.m_covg_coll_nodes = covg_coll_nodes
 
+        # set up dictionary to look up node type with associated schema(s)
+        node_dict = {'CoverageCollection': 'GenSON_collections',
+                     }
+
     def validate_json(self):
+        # try each schema in turn given the starting node
+        # handle/raise exceptions as appropriate
+        # output to user which ones have been tried, and overall result
         print("Not implemented")

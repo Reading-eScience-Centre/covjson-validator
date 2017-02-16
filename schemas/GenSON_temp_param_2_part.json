@@ -1,0 +1,99 @@
+{
+    "required": [
+        "description", 
+        "observedProperty", 
+        "type", 
+        "unit"
+    ], 
+    "type": "object", 
+    "properties": {
+        "observedProperty": {
+            "required": [
+                "description", 
+                "id", 
+                "label"
+            ], 
+            "type": "object", 
+            "properties": {
+                "id": {
+                    "type": "string"
+                }, 
+                "description": {
+                    "required": [
+                        "en"
+                    ], 
+                    "type": "object", 
+                    "properties": {
+                        "en": {
+                            "type": "string"
+                        }
+                    }
+                }, 
+                "label": {
+                    "required": [
+                        "de", 
+                        "en"
+                    ], 
+                    "type": "object", 
+                    "properties": {
+                        "de": {
+                            "type": "string"
+                        }, 
+                        "en": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }, 
+        "type": {
+            "type": "string"
+        }, 
+        "description": {
+            "required": [
+                "en"
+            ], 
+            "type": "object", 
+            "properties": {
+                "en": {
+                    "type": "string"
+                }
+            }
+        }, 
+        "unit": {
+            "required": [
+                "label", 
+                "symbol"
+            ], 
+            "type": "object", 
+            "properties": {
+                "symbol": {
+                    "required": [
+                        "type", 
+                        "value"
+                    ], 
+                    "type": "object", 
+                    "properties": {
+                        "type": {
+                            "type": "string"
+                        }, 
+                        "value": {
+                            "type": "string"
+                        }
+                    }
+                }, 
+                "label": {
+                    "required": [
+                        "en"
+                    ], 
+                    "type": "object", 
+                    "properties": {
+                        "en": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

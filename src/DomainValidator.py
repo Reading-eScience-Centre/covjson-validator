@@ -8,7 +8,14 @@
 # 
 #######################################################
 from ValidationDesign.Validator import Validator
-from ValidationDesign.DomainNodes import DomainNodes
+
+
+class DomainNodes:
+    """Objects found within the Domain object.
+    """
+
+    type = "Domain"
+
 
 class DomainValidator(Validator):
     m_DomainNodes= DomainNodes()

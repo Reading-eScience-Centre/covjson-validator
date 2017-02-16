@@ -10,6 +10,8 @@
 import json
 from CovgValidator import CovgValidator
 from CovgCollValidator import CovgCollValidator
+from DomainValidator import DomainValidator
+from ParamValidator import ParamValidator
 
 
 def enum(**enums):
@@ -34,11 +36,12 @@ class JSONCheck:
 
         :return:
         """
-        self.m_type_node = "type"
-        self.m_covg_type = "Coverage"
-        self.m_coll_type = "CoverageCollection"
-        self.m_covg_validator = CovgValidator()
-        self.m_covg_coll_validator = CovgCollValidator()
+        self.m_top_node_key = "type"
+        self.top_node_dict = {"Coverage": CovgValidator(),
+                              "CoverageCollection": CovgCollValidator(),
+                              "Domain": DomainValidator(),
+                              "Parameter": ParamValidator()}
+        self.m_validator = None
 
     def check_json(self, filename):
         """
@@ -51,15 +54,12 @@ class JSONCheck:
         """
         # read the JSON file to be checked
         json_data = self.loadfile(filename)
-        # check the resulting dict based on top-level nodes - one or other of of main types above
-        if json_data.get(self.m_type_node) == self.m_covg_type:
-            # it's a normal coverage so pass to appropriate validator
-            self.m_covg_validator.validate_json(json_data)
-        elif json_data.get(self.m_type_node) == self.m_coll_type:
-            # it's a coverage collection so pass to appropriate validator
-            self.m_covg_coll_validator.validate_json(json_data)
-        else:
+        # check the resulting dict based on top-level nodes - one of the main types above
+        try:
+            the_validator = self.top_node_dict[json_data.get(self.m_top_node_key)]
+            the_validator.validate_json(json_data)
+        except:
             # it's neither so raise error
-            raise jsonschema.SchemaError("File is not a coverage or coverage collection.")
+            raise json.jsonschema.SchemaError("File is not recognised.")
 
 

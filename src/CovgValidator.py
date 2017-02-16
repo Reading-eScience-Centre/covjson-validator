@@ -11,6 +11,12 @@ import jsonschema
 import os
 from JSONCheck import enum, loadfile
 
+class CovgNodes:
+    """Parent CoverageJSON object nodes.
+    """
+
+    type = "Coverage"
+
 
 class CovgValidator():
     """Has enum of expected nodes, and link to sub-schema
@@ -20,7 +26,10 @@ class CovgValidator():
                                  ranges="ranges", range_alt="rangeAlternates")
         self.m_schema_dir = '..' + os.pathsep + 'schemas'
 
-    def validate_json(self, covg_dict):
+    def validate_json(self, json_data):
         # Divide up object into parts according to nodes
         # pass relevant part to sub-validator
+        # use each enum as key
+        for item in [a for a in dir(self.m_covg_nodes) if not a.startswith('__')]:
+            data_section = json_data.get(item)
         schema_file = 'sss'

@@ -8,7 +8,13 @@
 # 
 #######################################################
 from ValidationDesign.Validator import Validator
-from ValidationDesign.ParametersNodes import ParametersNodes
+
+
+class ParametersNodes:
+    """Objects within the Parameters object.
+    """
+    pass
+
 
 class ParamValidator(Validator):
     m_ParametersNodes= ParametersNodes()

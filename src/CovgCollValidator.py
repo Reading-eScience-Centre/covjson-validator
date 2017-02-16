@@ -11,7 +11,7 @@
 from JSONCheck import enum
 
 class CovgCollValidator():
-    def __init__(self, covg_coll_nodes):
+    def __init__(self):
         self.m_covg_coll_nodes = enum(domain="domainType", params="parameters",
                                       the_ref="referencing", covgs="coverages")
 

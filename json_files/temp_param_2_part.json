@@ -1,0 +1,25 @@
+{
+  "type" : "Parameter",
+  "description": {
+    "en": "Air temperature measured in degrees Celsius."
+  },
+  "unit" : {
+    "label": {
+      "en": "Degree Celsius"
+    },
+    "symbol": {
+      "value": "Cel",
+      "type": "http://www.opengis.net/def/uom/UCUM/"
+    }
+  },
+  "observedProperty" : {
+    "id": "http://vocab.nerc.ac.uk/standard_name/air_temperature/",
+    "label" : {
+      "en": "Air temperature",
+      "de": "Lufttemperatur"
+    },
+    "description": {
+      "en": "Air temperature is the bulk temperature of the air, not the surface (skin) temperature."
+    }
+  }
+}

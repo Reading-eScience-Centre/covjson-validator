@@ -1,0 +1,15 @@
+{
+  "type": "Domain",
+  "axes": {
+    "hp": { "start": 0, "stop": 99, "num": 100 }
+  },
+  "referencing": [{
+    "coordinates": ["hp"],
+    "system": {
+      "type": "ex:HEALPixRS",
+      "ex:h": 3,
+      "ex:k": 3,
+      "ex:ordering": "nested"
+    }
+  }]
+}

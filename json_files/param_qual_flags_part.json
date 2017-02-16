@@ -1,0 +1,75 @@
+{
+  "type" : "Parameter",
+  "observedProperty" : {
+    "id": "http://mmisw.org/ont/argo/qualityFlag",
+    "label" : {
+      "en": "Argo Quality Control Flag"
+    },
+    "categories": [{
+      "id": "http://mmisw.org/ont/argo/qualityFlag/_0",
+      "label": {
+        "en": "No QC was performed"
+      },
+      "description": {
+        "en": "No quality control was performed"
+      }
+    }, {
+      "id": "http://mmisw.org/ont/argo/qualityFlag/_1",
+      "label": {
+        "en": "Good data"
+      },
+      "description": {
+        "en": "QC was performed good data"
+      }
+    }, {
+      "id": "http://mmisw.org/ont/argo/qualityFlag/_2",
+      "label": {
+        "en": "Probably good data"
+      },
+      "description": {
+        "en": "Probably good data but value may be inconsistent with statistics (differ from climatology)"
+      }
+    }, {
+      "id": "http://mmisw.org/ont/argo/qualityFlag/_3",
+      "label": {
+        "en": "Probably bad data"
+      },
+      "description": {
+        "en": "Probably bad data (spike-gradient- if other tests passed)"
+      }
+    }, {
+      "id": "http://mmisw.org/ont/argo/qualityFlag/_4",
+      "label": {
+        "en": "Bad data"
+      }
+    }, {
+      "id": "http://mmisw.org/ont/argo/qualityFlag/_5",
+      "label": {
+        "en": "Value modified"
+      },
+      "description": {
+        "en": "Value modified during quality control"
+      }
+    }, {
+      "id": "http://mmisw.org/ont/argo/qualityFlag/_8",
+      "label": {
+        "en": "Interpolated value"
+      }
+    }, {
+      "id": "http://mmisw.org/ont/argo/qualityFlag/_9",
+      "label": {
+        "en": "Missing value"
+      }
+    }]
+  },
+  "categoryEncoding": {
+    "http://mmisw.org/ont/argo/qualityFlag/_0": 0,
+    "http://mmisw.org/ont/argo/qualityFlag/_1": 1,
+    "http://mmisw.org/ont/argo/qualityFlag/_2": 2,
+    "http://mmisw.org/ont/argo/qualityFlag/_3": 3,
+    "http://mmisw.org/ont/argo/qualityFlag/_4": 4,
+    "http://mmisw.org/ont/argo/qualityFlag/_5": 5,
+    "http://mmisw.org/ont/argo/qualityFlag/_8": 8,
+    "http://mmisw.org/ont/argo/qualityFlag/_9": 9
+  }
+}

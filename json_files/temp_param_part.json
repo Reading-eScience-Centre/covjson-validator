@@ -1,0 +1,12 @@
+{
+  "type" : "Parameter",
+  "unit" : {
+    "symbol" : "°C"
+  },
+  "observedProperty" : {
+    "label" : {
+      "en": "Air temperature",
+      "de": "Lufttemperatur"
+    }
+  }
+}

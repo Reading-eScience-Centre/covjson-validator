@@ -1,0 +1,17 @@
+{
+  "type" : "Parameter",
+  "unit" : {
+    "label": {
+      "en": "Degree Celsius"
+    },
+    "symbol": {
+      "value": "degreeC",
+      "type": "ex:UDUNITS"
+    }
+  },
+  "observedProperty" : {
+    "label" : {
+      "en": "Air temperature"
+    }
+  }
+}
